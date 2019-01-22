@@ -5,11 +5,20 @@
   </h1>
 </div>
 <ul>
+
   <li *ngFor="let person of contacts">{{person.name}}, {{person.location}}, {{person.age}}</li>
   <button *ngFor='let person of contacts' (click)='person.increment()'>Inc</button>
   <button *ngFor='let person of contacts' (click)='person.decrement()'>Dec</button>
   <button *ngFor='let person of contacts' (click)='person.change()'>Change</button>
+
+
 </ul>
+
+<div *ngIf="contacts[0].age > 21; else elseBlockOne">{{contacts[0].name}} can drink</div>
+<ng-template #elseBlockOne>{{contacts[0].name}} is underage.</ng-template>
+
+<div *ngIf="contacts[1].age > 21; else elseBlockTwo">{{contacts[1].name}} can drink</div>
+<ng-template #elseBlockTwo>{{contacts[1].name}} is underage.</ng-template>
 
 <!-- <input type="text" [(ngModel)]="contacts[0].name">
 
