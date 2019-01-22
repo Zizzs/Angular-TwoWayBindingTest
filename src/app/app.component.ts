@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Contact } from './models/contacts.model'
+
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'Address Book';
+
+  contacts: Contact[] = [
+    new Contact("Alex", "Seattle", 18),
+    new Contact("James", "Tacoma", 50)
+  ];
 }
